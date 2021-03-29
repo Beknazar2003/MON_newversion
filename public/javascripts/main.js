@@ -1,6 +1,8 @@
 //GET data
 const requestURL = 'http://localhost:3000/data'
+
 let GETdata
+
 function sendRequest(method, url) {
   const headers = {
     'Content-Type': 'application/json'
@@ -22,25 +24,24 @@ function sendRequest(method, url) {
   })
 }
 
+function dataCharts(){
+  return chart = new google.visualization.PieChart(document.getElementById(GETdata.title))
+  
+}
+
 sendRequest('GET', requestURL)
-  .then(data => {GETdata = data})
+  .then(data => {
+    GETdata = data
+    google.load("visualization", "1", {packages:["corechart"]});
+    google.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+        const chart = new google.visualization.PieChart(document.getElementById('histogram-3'));
+        chart.draw(google.visualization.arrayToDataTable(GETdata[0].values),GETdata[0].options)
+    }
+  })
   .catch(err => console.log(err))
 
-google.load("visualization", "1", {packages:["corechart"]});
-google.setOnLoadCallback(drawChart);
 
-async function drawChart() {
-    const data =await google.visualization.arrayToDataTable([
-     ['Time', 'Total'],
-     ['2018-2019', GETdata[0].value],
-     ['2019-2020', GETdata[1].value],
-     ['2020-2021', GETdata[2].value]
-    ]);
-    const options = {
-     colors: ['brown']
-    };
-    const chart = new google.visualization.ColumnChart(document.getElementById('histogram-1'));
-    const chart2 = new google.visualization.PieChart(document.getElementById('histogram-2'));
-    chart.draw(data, options);
-    chart2.draw(data, options);
-}
+
+
