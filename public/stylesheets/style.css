@@ -108,7 +108,9 @@ option:disabled{
 	text-align: center;
 	border: 1px solid #c6c6c6;
 	border-radius: 3px;
-	width: 500px;
+	width: 49%;
+	margin: 15px auto;
+	font-size: 15px;
 }
 #histogram{
 	width: 500px;

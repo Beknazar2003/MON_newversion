@@ -11,21 +11,17 @@ router.get('/', function(req, res, next) {
 router.get('/data', (req, res) => {
   const data = [
     {
-      type: 'PieChart',
-      values: [
-      ['Time', 'Total'],
-      ['2018-2019', 40],
-      ['2019-2020', 95],
-      ['2020-2021', 127]
-     ],
+      chartType: 'ColumnChart',
+      dataTable: [['', 'Germany', 'USA', 'Brazil', 'Canada', 'France', 'RU'],
+                  ['', 700, 1000, 400, 500, 600, 800]],
       options: {
-      title: "Сводка по регионам",
-        colors: ['#eb4034','#ebb134','#34abeb']
-      }
+        'title': 'Countries',
+      },
+      containerId: 'chart'
     },
     {
-      type: 'ColumnChart',
-      values: [
+      chartType: 'ColumnChart',
+      dataTable: [
         ['Genre', 'Fantasy & Sci Fi', 'Romance', 'Mystery/Crime', 'General',
          'Western', 'Literature', { role: 'annotation' } ],
         ['2010', 10, 24, 20, 32, 18, 5, ''],
@@ -33,12 +29,27 @@ router.get('/data', (req, res) => {
         ['2030', 28, 19, 29, 30, 12, 13, '']
       ],
       options: {
-        title: "Сводка по регионам",
-        colors: ['#eb4034','#ebb134','#34abeb'],
-        legend: { position: 'top', maxLines: 3 },
-        bar: { groupWidth: '75%' },
-        isStacked: true,
-      }
+        'title': "Сводка по регионам",
+        'colors': ['#eb4034','#ebb134','#34abeb'],
+        'legend': { position: 'top', maxLines: 3 },
+        'bar': { groupWidth: '75%' },
+        'isStacked': true,
+      },
+      containerId: 'chart1'
+    },
+    {
+      chartType: 'PieChart',
+      dataTable: [
+        ['Time', 'Total'],
+        ['2018-2019', 40],
+        ['2019-2020', 95],
+        ['2020-2021', 127]
+       ],
+      options: {
+        'title': 'Сводка по регионам',
+        'colors': ['#eb4034','#ebb134','#34abeb']
+      },
+      containerId: 'chart2'
     }
   ]
   res.send(data)

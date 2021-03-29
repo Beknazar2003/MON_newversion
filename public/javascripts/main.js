@@ -24,24 +24,26 @@ function sendRequest(method, url) {
   })
 }
 
-function dataCharts(){
-  return chart = new google.visualization.PieChart(document.getElementById(GETdata.title))
-  
-}
-
 sendRequest('GET', requestURL)
   .then(data => {
     GETdata = data
-    google.load("visualization", "1", {packages:["corechart"]});
-    google.setOnLoadCallback(drawChart);
+    google.charts.load('49');
+    google.charts.setOnLoadCallback(drawVisualization);
 
-    function drawChart() {
-        const chart = new google.visualization.PieChart(document.getElementById('histogram-3'));
-        chart.draw(google.visualization.arrayToDataTable(GETdata[0].values),GETdata[0].options)
-    }
+      function drawVisualization() {
+        GETdata.forEach(element => {
+          const wrapper = new google.visualization.ChartWrapper(element);
+          const para = document.createElement("div");
+          para.setAttribute("id", element.containerId)
+          para.setAttribute("class", "card")
+          
+          const elem = document.getElementById("kg_std_doo");
+          elem.appendChild(para);
+          wrapper.draw();
+        });
+        
+
+        
+      }
   })
   .catch(err => console.log(err))
-
-
-
-
