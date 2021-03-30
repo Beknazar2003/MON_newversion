@@ -5,7 +5,7 @@ let GETdata
 
 function sendRequest(method, url) {
   const headers = {
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json',
   }
 
   return fetch(url, {

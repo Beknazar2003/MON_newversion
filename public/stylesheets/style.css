@@ -20,8 +20,8 @@ a{
 	background: #0269AE !important;
 }
 .nav-active{
-	border-color: #49A8DC;
-	color: #49A8DC;
+	border-color: #0096C7 !important;
+	color: #48CAE4  !important;
 }
 header{
 	background: #0269AE;
@@ -37,6 +37,8 @@ header{
 }
 #nav ul{
 	display: flex;
+	margin: 0;
+	padding: 0;
 }
 #nav li{
 	list-style: none;
@@ -45,16 +47,16 @@ header{
 	border-color: transparent;
 }
 #nav li:hover{
-	border-color: #49A8DC;
-	color: #49A8DC;
+	border-color: #0096C7;
+	color: #48CAE4;
 	transition: color .3s;
 	transition: border-color .3s;
 }
 .nav-logo{
-	width: 150px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	margin: 0 auto;
 }
 .nav-logo img{
 	width: 65px;
