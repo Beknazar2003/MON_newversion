@@ -19,9 +19,9 @@
 					<option value="7">Option 7</option>
 					<option value="8">Option 8</option>
 				</select>
-				<select>
-					<option value="" disabled selected>--Select Time Period Filter--</option>
-		  			<option value="1">Option 1</option>
+				<select id="TimeFilter">
+					<option value="-1" disabled selected>--Select Time Period Filter--</option>
+		  			<option value="1" onselect="selectTime()">Option 1</option>
 					<option value="2">Option 2</option>
 					<option value="3">Option 3</option>
 					<option value="4">Option 4</option>
@@ -40,5 +40,3 @@
 		</div>
 
 	</section>
-	<script src="https://www.google.com/jsapi"></script>
-	<script src="/javascripts/main.js"></script>
