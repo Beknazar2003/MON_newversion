@@ -27,7 +27,7 @@ exports.kg_std_doo = [
       containerId: 'chart1'
     },
     {
-      chartType: 'PieChart',
+      chartType: 'ColumnChart',
       dataTable: [
         ['Time', 'Total'],
         ['2018-2019', 40],
