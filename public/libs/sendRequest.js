@@ -32,3 +32,6 @@ sendRequest('GET', requestURL)
       GETdata.push(element)
     });
   })
+
+sendRequest('GET', 'http://localhost:3000/xml')
+.then(data => console.log(data))

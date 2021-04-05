@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,47 +11,84 @@
 	<script src="/libs/sendRequest.js"></script>
 	<title>{{title}}</title>
 </head>
+
 <body>
-  <header>
+	<header>
 		<nav role="navigation" id="nav-burger">
 
 			<img src="/images/logo.svg" alt="Герб">Дошкольное образование
-		  
-		  <div id="menuToggle">
-		    <input type="checkbox" />
-		    <span></span>
-		    <span></span>
-		    <span></span>
-		    <ul id="menu">
-		      	<a href="#"><li>Школьное <br> образование</li></a>
-				<a href="#"><li>Начальное <br> профессиональное</li></a>
-				<a href="#"><li>Среднее <br> профессиональное</li></a>
-				<a href="#"><li>Высшее <br> профессиональное</li></a>
-		    </ul>
-		  </div>
+
+			<div id="menuToggle">
+				<input type="checkbox" />
+				<span></span>
+				<span></span>
+				<span></span>
+				<ul id="menu">
+					<a href="#">
+						<li>Школьное <br> образование</li>
+					</a>
+					<a href="#">
+						<li>Начальное <br> профессиональное</li>
+					</a>
+					<a href="#">
+						<li>Среднее <br> профессиональное</li>
+					</a>
+					<a href="#">
+						<li>Высшее <br> профессиональное</li>
+					</a>
+				</ul>
+			</div>
 		</nav>
 		<h2>
 			Ключевые показатели деятельности образовательных организаций
 		</h2>
-		<nav id="nav">			
+		<nav id="nav">
 			<a href="#">
 				<div class="nav-logo">
 					<img src="/images/logo.svg" alt="Герб">
 				</div>
-			</a>			
-			
+			</a>
+
 			<div class="nav">
 				<ul>
-					<a href="#"><li>Дошкольное <br> образование</li></a>
-					<a href="#"><li>Школьное <br> образование</li></a>
-					<a href="#"><li class="nav-active">Начальное <br> професcиональное</li></a>
-					<a href="#"><li>Среднее <br> професcиональное</li></a>
-					<a href="#"><li>Высшее <br> професcиональное</li></a>
+					<a href="#">
+						<li>Дошкольное <br> образование</li>
+					</a>
+					<a href="#">
+						<li>Школьное <br> образование</li>
+					</a>
+					<a href="#">
+						<li class="nav-active">Начальное <br> професcиональное</li>
+					</a>
+					<a href="#">
+						<li>Среднее <br> професcиональное</li>
+					</a>
+					<a href="#">
+						<li>Высшее <br> професcиональное</li>
+					</a>
 				</ul>
 			</div>
 		</nav>
 	</header>
-    {{{body}}}
+	<section>
+		<div class="sidebar">
+			<ul>
+				<a href="#">
+					<li class="sidebar-active"><img src="/images/state.png"> Образовательные организации</li>
+				</a>
+				<a href="#">
+					<li><img src="/images/student.png"> Обучающиеся</li>
+				</a>
+				<a href="#">
+					<li><img src="/images/employee.png"> Сотрудники</li>
+				</a>
+			</ul>
+		</div>
+		<div class="container">
+			{{{body}}}
+		</div>
+	</section>
 	<script src="/javascripts/main.js"></script>
-  </body>
+</body>
+
 </html>

@@ -1,6 +1,7 @@
 google.charts.setOnLoadCallback(drawVisualization)
 
 function drawVisualization() {
+  console.log(GETdata)
   GETdata.forEach(element => {
     const wrapper = new google.visualization.ChartWrapper(element)
     const para = document.createElement("div")

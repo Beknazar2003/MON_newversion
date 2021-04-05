@@ -112,7 +112,9 @@ option:disabled{
 	border-radius: 3px;
 	width: 49%;
 	margin: 15px auto;
+	padding: 15px;
 	font-size: 15px;
+	background-color: #ffffff;
 }
 #histogram{
 	width: 500px;
