@@ -15,8 +15,5 @@ router.get('/data', (req, res) => {
 router.get('/test', (req, res) => {
   res.render('test')
 })
-router.get('/xml', (req, res) => {
-  res.send(data)
-})
 
 module.exports = router;

@@ -2,7 +2,7 @@ const GETdata = new Array()
 const requestURL = 'http://localhost:3000/data'
 
 google.charts.load('49', {
-  'packages': ['corechart', 'controls']
+  'packages': ['corechart', 'controls', 'bar']
 })
 
 function sendRequest(method, url) {
@@ -32,6 +32,3 @@ sendRequest('GET', requestURL)
       GETdata.push(element)
     });
   })
-
-sendRequest('GET', 'http://localhost:3000/xml')
-.then(data => console.log(data))

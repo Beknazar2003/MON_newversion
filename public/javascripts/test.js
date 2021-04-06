@@ -34,6 +34,7 @@ function drawStuff() {
     const programmaticChart = new google.visualization.ChartWrapper(element)
     dashboard.bind(programmaticSlider, programmaticChart)
     dashboard.draw(element.dataTable)
+    
   });
 
 }
