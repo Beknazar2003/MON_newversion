@@ -1,5 +1,5 @@
 const GETdata = new Array()
-const requestURL = 'http://localhost:3000/data'
+const requestURL = 'http://localhost:3000/data/data'
 
 google.charts.load('49', {
   'packages': ['corechart', 'controls', 'bar']
@@ -30,5 +30,5 @@ sendRequest('GET', requestURL)
   .then(data => {
     data.forEach(element => {
       GETdata.push(element)
-    });
+    })
   })

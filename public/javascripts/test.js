@@ -35,6 +35,6 @@ function drawStuff() {
     dashboard.bind(programmaticSlider, programmaticChart)
     dashboard.draw(element.dataTable)
     
-  });
+  })
 
 }
