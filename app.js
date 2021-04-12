@@ -3,14 +3,11 @@ const express = require('express')
 const path = require('path')
 const cookieParser = require('cookie-parser')
 const logger = require('morgan')
-const http = require('http')
 
 const indexRouter = require('./routes/index')
 const dataRouter = require('./routes/data')
-const { error } = require('console')
 
 const app = express()
-const server = http.createServer(app)
 
 const port = process.env.PORT || '3000'
 app.set('port', port)
@@ -44,7 +41,6 @@ app.use(function(err, req, res, next) {
   res.render('error')
 })
 
-server.listen(port)
-server.on('error', () => {throw error})
+app.listen(port)
 
 module.exports = app
