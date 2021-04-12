@@ -1,0 +1,7 @@
+{
+    "name": "MON",
+    "description": "Open analization app",
+    "repository": "https://github.com/Beknazar2003/MON_newversion",
+    "website": "https://mon-demo.herokuapp.com/",
+    "image": "heroku/node"
+  }
