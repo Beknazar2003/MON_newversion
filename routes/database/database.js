@@ -1,43 +1,4 @@
-const data = require('./data.json')
-
-let PEO = 0
-let CEC = 0
-let IV = 0
-let PS = 0
-let SV = 0
-let T = 0
-let HPEO = 0
-let SVEO = 0
-let PVEO = 0
-
-for (let key in data.xml) {
-  if (data.xml[key][0].institution_type == 'PRESCHOOL EDUCATIONAL ORGANIZATION')
-    PEO++
-
-  if (data.xml[key][0].institution_type == 'CHILDREN EDUCATIONAL CENTERS')
-    CEC++
-
-  if (data.xml[key][0].institution_type == 'INSTITIT VPO')
-    IV++
-
-  if (data.xml[key][0].institution_type == 'PRIMARY SECONDARY')
-    PS++
-
-  if (data.xml[key][0].institution_type == 'SPO_VPO')
-    SV++
-
-  if (data.xml[key][0].institution_type == 'TEST')
-    T++
-
-  if (data.xml[key][0].institution_type == 'HIGHER PROFESSIONAL EDUCATIONAL ORGANIZATION')
-    HPEO++
-
-  if (data.xml[key][0].institution_type == 'SECONDARY VOCATIONAL EDUCATIONAL ORGANIZATION')
-    SVEO++
-
-  if (data.xml[key][0].institution_type == 'PRIMARY VOCATIONAL EDUCATIONAL ORGANIZATION')
-    PVEO++
-}
+const filterData = require('./filter')
 
 exports.kg_std_doo = [{
     chartType: 'ColumnChart',
@@ -133,20 +94,62 @@ exports.kg_std_doo = [{
     chartType: 'PieChart',
     dataTable: [
       ['Name', 'Value'],
-      ['ДОО', PEO],
-      ['ДОЦ', CEC],
-      ['И_ВПО', IV],
-      ['ОО', PS],
-      ['СПО_ВПО', SV],
-      ['ТЕСТ', T],
-      ['ВРО', HPEO],
-      ['СПО', SVEO],
-      ['НПО', PVEO]
+      ['ДОО', filterData.PEO],
+      ['ДОЦ', filterData.CEC],
+      ['И_ВПО', filterData.IV],
+      ['ОО', filterData.PS],
+      ['СПО_ВПО', filterData.SV],
+      ['ТЕСТ', filterData.T],
+      ['ВРО', filterData.HPEO],
+      ['СПО', filterData.SVEO],
+      ['НПО', filterData.PVEO]
     ],
     options: {
       title: 'Численность организаций',
       'legend': 'bottom'
     },
     containerId: 'chart5'
+  },
+  {
+    chartType: 'PieChart',
+    dataTable: [
+      ['Name', 'Value'],
+      ['Девочки', filterData.girls],
+      ['Мальчики', filterData.boys]
+    ],
+    options: {
+      title: 'По полу обучающихся',
+      'legend': 'bottom'
+    },
+    containerId: 'chart6'
+  },
+  {
+    chartType: 'PieChart',
+    dataTable: [
+      ['Name', 'Value'],
+      ['Женщины', filterData.women],
+      ['Мужчины', filterData.men]
+    ],
+    options: {
+      title: 'По полу сотрудников',
+      'legend': 'bottom'
+    },
+    containerId: 'chart7'
+  },
+  {
+    chartType: 'PieChart',
+    dataTable: [
+      ['Name', 'Value'],
+      ['Кыргысзкий', filterData.kg],
+      ['Русский', filterData.ru],
+      ['Узбекский', filterData.uz],
+      ['Другие', filterData.oth],
+      ['Таджикский', filterData.tj],
+    ],
+    options: {
+      title: 'По полу сотрудников',
+      'legend': 'right'
+    },
+    containerId: 'chart8'
   }
 ]

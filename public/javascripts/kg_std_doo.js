@@ -26,7 +26,7 @@ function drawStuff() {
           'labelStacking': 'vertical',
           'label': 'Time Filter',
           'allowTyping': false,
-          'allowMultiple': false
+          'allowMultiple': true
         }
       }
     })
