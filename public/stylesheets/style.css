@@ -110,11 +110,18 @@ option:disabled{
 	text-align: center;
 	border: 1px solid #c6c6c6;
 	border-radius: 3px;
-	width: 49%;
-	margin: 15px auto;
+	min-width: 40%;
+	margin: 15px;
 	padding: 15px;
 	font-size: 15px;
 	background-color: #ffffff;
+}
+#chart-wrap{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-items: center;
 }
 #histogram{
 	width: 500px;

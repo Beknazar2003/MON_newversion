@@ -10,12 +10,12 @@ function drawStuff() {
     dashboardWrap.setAttribute("id", `${element.containerId + '_dashboard'}`)
     dashboardWrap.setAttribute("class", 'card')
 
-    const elem = document.getElementById("kg_std_doo")
+    const elem = document.getElementById("chart-wrap")
     elem.appendChild(dashboardWrap)
     dashboardWrap.appendChild(controlWrap)
     dashboardWrap.appendChild(chartWrap)
     const dashboard = new google.visualization.Dashboard(
-      document.getElementById("kg_std_doo"))
+      document.getElementById("chart-wrap"))
 
     const programmaticSlider = new google.visualization.ControlWrapper({
       'controlType': 'CategoryFilter',
